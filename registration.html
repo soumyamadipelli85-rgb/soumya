@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Registration Form</title>
+  <style>
+    body {
+      font-family: "Raleway", sans-serif;
+      background-color: #ff6655;
+    }
+    h1 {
+      text-align: center;
+      margin: 20px auto;
+    }
+    form {
+      width: 70%;
+      margin: auto;
+    }
+    fieldset {
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      margin: 20px auto;
+      box-shadow: 0 0 5px #333;
+      background-color: #eee;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="text"], input[type="email"], select {
+      width: calc(100% - 20px);
+      height: 20px;
+      padding: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+    }
+    button {
+      width: 100%;
+      text-align: center;
+      margin: auto;
+      height: 40px;
+      border-radius: 10px;
+      background-color: #eee;
+    }
+  </style>
+</head>
+<body>
+  <div id="event-registration">
+    <h1>Registration</h1>
+    <form id="event-registration-form" method="POST" action="">
+      <fieldset>
+        <h3>Personal Information</h3>
+        <label for="first-name">First Name</label>
+        <input type="text" id="first-name" name="first-name"/>
+        <label for="last-name">Last Name</label>
+        <input type="text" id="last-name" name="last-name"/>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email"/>
+        <label for="street">Street Address</label>
+        <input type="text" id="street" name="street"/>
+        <label for="unit">Unit</label>
+        <input type="text" id="unit" name="unit"/>
+        <label for="city">City</label>
+        <input type="text" id="city" name="city"/>
+        <label for="state">State</label>
+        <select id="states">
+          <option>-- Choose your state --</option>
+        </select>
+        <label for="postal-code">Postal Code</label>
+        <input type="text" id="postal-code" name="postal-code"/>
+      </fieldset>
+      <button type="submit">Submit Form</button>
+    </form>
+  </div>
+
+  <script>
+    var statesSelect = document.getElementById("states");
+    var states = {
+      AL: "Alabama",
+      AK: "Alaska",
+      AS: "American Samoa",
+      AZ: "Arizona",
+      AR: "Arkansas",
+      CA: "California",
+      CO: "Colorado",
+      CT: "Connecticut",
+      DE: "Delaware",
+      DC: "District Of Columbia",
+      FM: "Federated States Of Micronesia",
+      FL: "Florida",
+      GA: "Georgia",
+      GU: "Guam",
+      HI: "Hawaii",
+      ID: "Idaho",
+      IL: "Illinois",
+      IN: "Indiana",
+      IA: "Iowa",
+      KS: "Kansas",
+      KY: "Kentucky",
+      LA: "Louisiana",
+      ME: "Maine",
+      MH: "Marshall Islands",
+      MD: "Maryland",
+      MA: "Massachusetts",
+      MI: "Michigan",
+      MN: "Minnesota",
+      MS: "Mississippi",
+      MO: "Missouri",
+      MT: "Montana",
+      NE: "Nebraska",
+      NV: "Nevada",
+      NH: "New Hampshire",
+      NJ: "New Jersey",
+      NM: "New Mexico",
+      NY: "New York",
+      NC: "North Carolina",
+      ND: "North Dakota",
+      MP: "Northern Mariana Islands",
+      OH: "Ohio",
+      OK: "Oklahoma",
+      OR: "Oregon",
+      PW: "Palau",
+      PA: "Pennsylvania",
+      PR: "Puerto Rico",
+      RI: "Rhode Island",
+      SC: "South Carolina",
+      SD: "South Dakota",
+      TN: "Tennessee",
+      TX: "Texas",
+      UT: "Utah",
+      VT: "Vermont",
+      VI: "Virgin Islands",
+      VA: "Virginia",
+      WA: "Washington",
+      
+      WV:"West Virginia",
+WI:"Wisconsin",
+WY:"Wyoming"
+};
+for (var key in states){
+console.log(key);
+if(states.hasOwnProperty(key)){
+console.log(key);
+var option = document.createElement("option");
+var t = document.createTextNode(states[key]); 
+option.appendChild(t); //Append the text to
+statesSelect.appendChild(option);
+}
+}
+</script>
